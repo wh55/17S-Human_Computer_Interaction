@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- author: Hao WAN-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/bodymargin"
+    android:orientation="vertical"
+    >
+
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/bodymargin">
+        <TextView
+            android:id="@+id/firstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fname"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/title"
+            android:paddingRight="@dimen/bodymargin" />
+        <TextView
+            android:id="@+id/firstNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/content"
+            android:textStyle="bold"/>
+    </TableRow>
+
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/bodymargin">
+        <TextView
+            android:id="@+id/lastNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lname"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/title"
+            android:paddingRight="@dimen/bodymargin"/>
+        <TextView
+            android:id="@+id/lastNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/content"
+            android:textStyle="bold"/>
+    </TableRow>
+
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/bodymargin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:id="@+id/phoneLabel"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/title"
+            android:paddingRight="@dimen/bodymargin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phoneValue"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/content"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/bodymargin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:id="@+id/emailLabel"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/title"
+            android:paddingRight="@dimen/bodymargin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailValue"
+            android:textColor="@color/background_material_dark"
+            android:textSize="@dimen/content"
+            android:textStyle="bold" />
+    </TableRow>
+
+
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/bodymargin">
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birth"
+        android:id="@+id/birthDateLabel"
+        android:textColor="@color/background_material_dark"
+        android:textSize="@dimen/title"
+        android:paddingRight="@dimen/bodymargin"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/birthDateValue"
+        android:textColor="@color/background_material_dark"
+        android:textSize="@dimen/content"
+        android:textStyle="bold" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call"
+        android:layout_marginRight="@dimen/bodymargin"
+        />
+
+    <Button
+        android:id="@+id/btnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text"
+        android:layout_marginLeft="@dimen/bodymargin"
+        />
+    </TableRow>
+
+</LinearLayout>

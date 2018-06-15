@@ -1,0 +1,8 @@
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\bin\Release\RebateEntryEvaluator.exe.config
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\bin\Release\RebateEntryEvaluator.exe
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\bin\Release\RebateEntryEvaluator.pdb
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\obj\Release\RebateEntryEvaluator.Form1.resources
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\obj\Release\RebateEntryEvaluator.Properties.Resources.resources
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\obj\Release\RebateEntryEvaluator.csproj.GenerateResource.Cache
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\obj\Release\RebateEntryEvaluator.exe
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\RebateEntryEvaluator\RebateEntryEvaluator\obj\Release\RebateEntryEvaluator.pdb

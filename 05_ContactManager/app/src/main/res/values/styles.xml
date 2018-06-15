@@ -1,0 +1,10 @@
+<!-- author: Hao WAN-->
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" >
+
+        <item name="colorAccent">@android:color/holo_orange_light</item>
+        <item name="colorPrimary">@android:color/holo_orange_light</item>
+    </style>
+
+</resources>

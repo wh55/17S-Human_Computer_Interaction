@@ -1,0 +1,1680 @@
+CHAPTER 11
+THE ANALYSIS WORKFLOW
+The exercises in this chapter give students extensive exposure to
+ object-oriented analysis.  It is important to stress that repeated
+ iteration is an intrinsic quality of the object-oriented paradigm
+ in general, and of object-oriented analysis in particular.  For
+ example, problems 11.19 and 11.21 seem extremely straightforward.  
+However, the students will have to iterate a number of times between
+use-case modeling, class modeling, and dynamic modeling before they
+ arrive at an acceptable solution.  (In general, there may be more
+ than one acceptable solution to a given problem.)
+PROBLEM SOLUTIONS
+11.1:	Both constraints superficially appear to be precise and
+ scientific, but neither can be measured or tested.  Specifically,
+(i)	The term “significantly” is imprecise — significant for
+ whom: client or developer?  Also, this is a reason for developing
+ the product, not a constraint.
+(ii)	The term “reasonable” is imprecise — reasonable for whom: client or developer? 
+
+11.2:	Ambiguities:
+	Is a clove or a head of garlic to be used?
+	What operations are to be performed the night before?  Everything?
+	Which juice is to be strained, orange or lemon?
+	What is to be frozen, the lemon or just the juice?
+	Is the onion to be diced, or just the shallots?
+	Which mixture is to be blended for 10 minutes?
+	Does “blend” mean “mix by hand” or “use an electric blender?”
+	How are the lumps to be removed, with a strainer or a blender? 
+	The lumps in the mixture could be the mushrooms.
+	Two mixtures are specified, the pockwester is added to only one of them: which? 
+	How can you kill a “fresh” pockwester?
+	The terms “simmer,” “bite-sized,” and “soft to the touch” are imprecise.
+	We can broil for any time from 1 microsecond to 3 minutes, 59 seconds.
+	What is to be sprinkled with Parmesan — the serving platter, or the pockwester?
+
+	Omissions:
+	How large is a “large onion”?
+	What size can of orange juice?
+	How large a lemon?
+	What kind of bread for the crumbs?
+	How much flour?
+	How much milk?
+	How large are medium-sized shallots?
+	How large are medium-sized eggplants?
+	What size pockwester? 
+	What size garlic?
+	How much Parmesan cheese?
+	What size eggs?
+	The sugar is not listed in the ingredients.
+	Nor are the mushrooms.
+	Nor are the frobs.
+	What size platter is to be used?
+
+	Contradictions:
+	The ingredients call for frozen orange juice, the recipe calls for fresh.
+	After the lemon has been squeezed the night before, it is then supposed to be sliced.
+	We are told to “stir vigorously,” “slice,” and “in the meantime” to coat, dip, and so on — it is impossible to do all these things at once.
+
+	The following items are certainly confusing, but they are not ambiguities, omissions, or contradictions:
+	The lemon juice, eggplant, and garlic are never used.
+	Grilling in a skillet is not usually a good idea.
+	Shaking up mushrooms wet with milk in a paper bag is fraught with difficulties.
+	The instruction to whisk the eggs should precede the instruction to add them to a mixture.
+	If the blending is to be done with an electric blender, 10 minutes seems to be too long. 
+	The recipe calls for first coating the mushrooms in flour, and then dipping them in milk; this may be unorthodox, but then so is much of the rest of the recipe!
+	Two mixtures are specified, the pockwester is added to only one of them; nothing is mentioned regarding what is to be done with the other one.
+
+11.3:	If actual sales for the current month are less than the target sales for the current month, check whether the percentage difference between the actual sales and the target sales for the current month is 5% or more.  If so, check whether the percentage difference between the actual sales and target sales for the current month is greater than or equal to half of the percentage difference between the actual sales and target sales for the previous month.  If this second condition also holds, print a report.  Otherwise, do nothing.
+
+11.4:	For each shop, the actual sales for each month are compared with the target sales for that month.
+
+	The effectiveness of a given shop for a given month is defined by
+
+	
+	
+	The shortfall for a given shop for a given month is defined by
+
+    
+
+	A shop is deemed to have achieved its objective for the current month if the shortfall for the current month is less than or equal to 5%, or if the shortfall for the current month is less than or equal to half the shortfall for the previous month; in the case of January, the shortfall for the previous month is deemed to be 0%.  
+
+	If a shop has not achieved its objective, a report is to be printed.
+
+11.5:	The following assumptions are made: there are no service charges, no ATM withdrawals.  The only transactions that are allowed are checks and deposits.  All checks bear a number.  The user has a pile of canceled checks, and a pile of deposit slips.
+	
+	Sort the checks in check-number order.  For each check, find an entry in the bank statement that matches the check number.  If no such entry is found, the statement is in error.  Otherwise, mark that entry, and verify that the amount for that entry is the same as that on the check.  If the amounts do not match, the statement is in error.  
+
+	Sort the deposit slips according to date of deposit.  For each deposit slip, find an entry in the statement that matches the date of deposit and the amount of the deposit.  Mark that entry.  If no such entry is found, the statement is in error.  
+
+	After all checks and deposits have been processed, verify that all items on the statement have been marked.  If not, the statement is in error.
+
+	Add the amount of all deposits to the beginning balance, and from that sum subtract the total of all the checks.  If the result of that subtraction is not equal to the ending balance then the statement is in error, otherwise it is correct.
+
+11.6:	The state diagrams for classes Button, Elevator, and Elevator Doors are shown in Figures 11.1, 11.2, and 11.3, respectively.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.1.  Statechart for class Button.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.2.  Statechart for class Elevator.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.3.  Statechart for class Elevator Doors.
+
+
+11.7:	Entity-class extraction consists of three steps: functional modeling, entity-class modeling, and dynamic modeling.  It is possible, in theory, to do the dynamic modeling step before the entity-class modeling step.  However, this is not advisable, because when the entity classes are eventually extracted, major changes in the statechart are almost certain to be required.  The reason is that the statechart (essentially a finite state machine) cannot represent or identify inheritance.  Accordingly, the latest point at which classes can be introduced is the start of the entity-class modeling
+
+11.8:	It is possible (though not advisable) to use the rapid prototype as a way of determining what the classes should be.  Accordingly, classes would be introduced early in the requirements workflow.
+
+	Alternatively, class modeling could precede use-case modeling during the object-oriented analysis phase, and classes would then be introduced at the very beginning of the object-oriented analysis phase.  However, this approach would preclude experienced developers from extracting the classes from the scenarios or using CRC cards.
+
+11.9:	A wide variety of formalisms could be used: graphical, mathematical, or textual.  All that is required is that the formalism should reflect the various states, transitions, and actions that are involved.  
+
+	However, other formalisms are, in general, less convenient to use.  For example, a mathematical formalism or a textual formalism will be less suitable than the one used here.  
+
+11.10:	The principle of stepwise refinement requires as many decisions as possible to be postponed.  All the operations that have to be included in the product (“methods”) must eventually appear in the state diagram.  However, assigning the methods to specific classes can wait until the design phase.  On the other hand, modeling becomes extremely complex unless the attributes are assigned to their specific classes.
+ 
+	In fact, there is another good reason to wait until the design phase before allocating methods to classes, namely that the choice of architecture (for example, client-server) will affect where the classes are physically located, and hence may affect how the operations are organized into methods, and which methods should be allocated to which classes.
+
+11.11:	The purpose of noun extraction is to find the classes.  The other parts of speech are irrelevant for that purpose.
+
+	An MSG Foundation staff member wants to update the expected annual return on an investment.
+1.	The staff member enters the new value of the expected annual return on the investment.
+2. 	The information system changes the date on which the expected annual return was updated to that day’s date.Possible alternatives:
+
+A.	The staff member enters the investment number incorrectly. 
+
+B. 	The staff member enters a negative number for the new value of the expected annual return on the investment.
+Figure 11.4.  An extended scenario of the use case Manage an Investment.
+
+
+	An MSG Foundation staff member wants to update the estimated annual operating expenses.
+1.	The staff member enters the new value of the estimated annual operating expenses.
+2. 	The information system changes the date on which the estimated annual operating expenses were updated to that day’s date.Possible alternative:
+
+A.	The staff member enters zero or a negative number for the new value of the estimated annual operating expenses.
+Figure 11.5.  An extended scenario of the use case Update Estimated Annual Operating Expenses.
+
+
+
+An MSG staff member inputs the new annual property tax for a mortgage (1, 2).  The information system updates the mortgage record (3), and informs the staff member that this has been done (4–6).
+Figure 11.6.  The flow of events of the interaction diagrams for updating the annual property tax (Figures 11.40 and 11.41 of Object-Oriented Software Engineering).
+
+
+11.12:	See Figure 11.4.
+
+11.13:	See Figure 11.5.
+
+11.14:	See Figure 11.6.
+
+
+An MSG staff member inputs the new weekly income of the couple (1, 2).  The information system updates the mortgage record (3), and informs the MSG staff member that this has been done (4–6).
+Figure 11.7.  The flow of events of the interaction diagrams for updating weekly income (Figures 11.43 and 11.44 of Object-Oriented Software Engineering).
+
+
+An MSG staff member inputs the new annual operating expenses (1).  The information system updates the record (2), and informs the MSG staff member that this has been done (3, 4).
+Figure 11.8.  The flow of events of the interaction diagrams for updating annual operating expenses (Figures 11.48 and 11.49 of Object-Oriented Software Engineering).
+
+
+
+An MSG staff member requests that the list of mortgages be printed (1, 2).  The information system does so (3), and informs the staff member that this has been done (3, 4).
+Figure 11.9.  The flow of events of the interaction diagrams for printing the list of mortgages (Figures 11.54 and 11.55 of Object-Oriented Software Engineering).
+
+
+11.15:	See Figure 11.7.
+
+11.17:	See Figure 11.8.
+
+11.18:	See Figure 11.9.
+
+
+11.19:	In this solution, subheadings are underlined.
+
+	Scenarios for the use cases of Problem 10.14 appear in Figures 11.10 through 11.21.
+
+
+A borrower hands a book and his or her card to a librarian.
+
+1 	The librarian enters C at the computer terminal, and then scans the bar codes on the book and on the borrower’s card.
+
+2. 	The system determines that there is no hold on the book for another borrower.
+
+3. 	The system updates the relevant book data.
+
+The librarian stamps the book and hands it to the borrower, together with the card.  
+Figure 11.10.  First scenario of the Check Out Book use case.
+
+
+A borrower hands a book and his or her card to a librarian.
+
+1 	The librarian enters C at the computer terminal, and then scans the bar codes on the book and on the borrower’s card.
+
+2. 	The system determines that the book has a hold on it for another borrower.
+
+The librarian does not allow the borrower to check that book out.  The librarian returns the card to the borrower.
+Figure 11.11.  Second scenario of the Check Out Book use case.
+
+
+A borrower hands a book and his or her card to a librarian.
+
+1.	The librarian enters C at the computer terminal, and then scans the bar code on the book and on the borrower’s card.
+
+2. 	The system determines that the book has a hold on it for that borrower.
+
+3. 	The system clears the hold and then updates the relevant book data.
+
+The librarian stamps the book and hands it to the borrower, together with the card.
+Figure 11.12.  Third scenario of the Check Out Book use case.
+
+
+A borrower hands a book to a librarian.  The book is not on hold for another borrower.
+
+1 	The librarian enters R at the computer terminal, and then scans the bar code on the book.
+
+2. 	The system updates the relevant book data.
+
+The librarian sets the book aside to be returned to the book stacks.
+Figure 11.13.  First scenario for the Return Book use case.
+
+
+A borrower hands a book to a librarian.  The book is on hold for another borrower.
+
+1 	The librarian enters R at the computer terminal, and then scans the bar code on the book.
+
+2. 	The system updates the relevant book data.
+
+The librarian places the book on a special shelf.
+Figure 11.14.  Second scenario for the Return Book use case.
+
+
+
+1 	A librarian enters + at the computer terminal, and then scans the bar code on a new book.
+
+2. 	The system inserts the relevant book data.
+
+The librarian sets the book aside to be placed in the book stacks.
+Figure 11.15.  First scenario for the Add or Remove Book use case.
+
+
+1 	A librarian enters – at the computer terminal, and then scans the bar code on a book.
+
+2. 	The system removes the relevant book data.
+
+The librarian sets the book aside to be pulped.
+Figure 11.16.  Second scenario for the Add or Remove Book use case.
+
+
+A borrower hands a librarian a form bearing the number of a book, together with his or her card.
+
+1 	The librarian enters H at the computer terminal, and then types in the book number and scans the bar code on the borrower’s card.
+
+There already is a hold on the book for another borrower.
+
+2. 	The system displays a message to this effect.
+
+The librarian informs the borrower, returns the card, and sets aside the form for recycling.
+Figure 11.17.  First scenario for the Hold Book use case.
+
+
+A borrower hands a librarian a form bearing the number of a book, together with his or her card.
+
+1 	The librarian enters H at the computer terminal, and then types in the book number and scans the bar code on the borrower’s card.
+
+There is no hold on the book for another borrower.
+
+2. 	The system updates the relevant book data.
+
+The librarian returns the card to the borrower, and sets aside the form for recycling.
+Figure 11.18.  Second scenario for the Hold Book use case.
+
+
+1 	A borrower enters A= followed by an author’s name.
+
+2. 	The system displays the requested information.
+Figure 11.19.  First scenario for the Query Catalog use case.
+
+
+1 	A librarian enters T= followed by the title of a book.
+
+2. 	The system displays the requested information.
+Figure 11.20.  Second scenario for the Query Catalog use case.
+
+
+1 	A borrower enters S= followed by a subject area.
+
+2. 	The system displays the requested information.
+Figure 11.21.  Third scenario for the Query Catalog use case.
+
+	
+
+	
+Figure 11.22.  Initial class diagram for the library circulation system.
+
+
+	Candidate entity classes are determined using noun extraction.
+
+	Description of software product in a single paragraph: An automated library circulation system is to be constructed.  Each book in the library, as well as each borrower, can be identified by a bar code.  A book can be checked out, provided it is not being held for another borrower; at most one borrower can place a hold on a book checked out by another borrower.  When a book is returned, a librarian checks it in.  Borrowers and librarians are permitted to query a catalog of library holdings.
+
+	Identify the nouns: An automated library circulation system is to be constructed.  Each book in the library, as well as each borrower, can be identified by a bar code.  A book can be checked out provided it is not being held for another borrower; at most one borrower can place a hold on a book checked out by another borrower.  When a book is returned, a librarian checks it in.  Borrowers and librarians are permitted to query a catalog of library holdings.
+
+	With regard to the nouns in the previous paragraph, borrower and librarian are actors, and bar code is an attribute of a book and of a borrower.  Accordingly, these nouns cannot correspond to classes.  In addition, library, hold, holding, and system are abstract nouns.  Finally, catalog is information that relates to books.  This leaves Book Class as the sole candidate class.
+
+	(In a real library, there would probably be a Borrower Class so that a librarian can determine which books a specific borrower has checked out.  For simplicity, this problem has been set up so that no class of that kind is needed.)
+
+	The initial class diagram is shown in Figure 11.22.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.23.  Initial statechart of the library circulation system.
+
+
+	The initial statechart is shown in Figure 11.23.
+
+	The initial boundary classes are Librarian Screen Class (used by the librarians) and Query Screen Class (used by both the librarians and the borrowers).
+
+	The initial control class is Library Control Class.
+
+	Use case Check Out Book:
+
+	The class diagram for the Check Out Book use case is shown in Figure 11.24.  
+
+	First, consider the scenario of Figure 11.12.  The communication diagram is shown in Figure 11.25, the flow of events in Figure 11.26, and the equivalent sequence diagram in Figure 11.27.
+Figure 11.24.  Class diagram showing the classes that realize the Check Out Book, Return Book, and Hold Book use cases of the library circulation system.
+
+
+
+Figure 11.25.  A communication diagram of the realization of the scenarios of Figures 11.10 and 11.12 of the Check Out Book use case of the library circulation system.
+
+
+	
+
+The librarian scans the barcode on the borrower’s card and the book the borrower wishes to check out (1).  The circulation system determines the hold status of the relevant book data (2–4), updates the book data (5), and informs the librarian that the book has been checked out (6–8).
+Figure 11.26.  The flow of events of the realization of the scenarios of Figures 11.10 and 11.12 of the Check Out Book use case of the library circulation system.
+
+
+
+Figure 11.27.  A sequence diagram equivalent to the communication diagram of Figure 11.25.  The flow of events is therefore as shown in Figure 11.26.
+
+
+Figure 11.28.  A communication diagram of the realization of the scenario of Figure 11.11 of the Check Out Book use case of the library circulation system.
+
+
+The librarian scans the barcode on the borrower’s card and the book the borrower wishes to check out (1).  The circulation system determines the hold status of the relevant book (2–4), and informs the librarian that the book is on hold for another reader (5–6).
+Figure 11.29.  The flow of events of the realization of the scenario of Figure 11.11 of the Check Out Book use case of the library circulation system.
+
+
+	We continue analyzing use case Check Out Book by considering the scenario of Figure 11.11 (the book is on hold for another borrower).  The communication diagram is shown in Figure 11.28, the flow of events in Figure 11.29, and the equivalent sequence diagram in Figure 11.30.
+
+
+
+Figure 11.30.  A sequence diagram equivalent to the communication diagram of Figure 11.28.  The flow of events is therefore as shown in Figure 11.29.
+
+
+
+	Use case Return Book:
+
+	The class diagram is again Figure 11.24.  First, consider the scenario of Figure 11.13.  The communication diagram is shown in Figure 11.31, the flow of events in Figure 11.32, and the equivalent sequence diagram in Figure 11.33.
+
+
+
+Figure 11.31.  A communication diagram of the realization of the scenario of Figure 11.13 of the Return Book use case of the library circulation system.
+
+
+The librarian scans the barcode on the book the borrower wishes to return (1).  The library circulation system updates the book data (2–3), and informs the librarian that this has been done (4–6).
+Figure 11.32.  The flow of events of the realization of the scenario of Figure 11.13 of the Return Book use case of the library circulation system.
+
+ 
+Figure 11.33.  A sequence diagram equivalent to the communication diagram of Figure 11.31.  The flow of events is therefore as shown in Figure 11.32.
+
+
+	Now consider the scenario of Figure 11.14 (the returned book is on hold for another borrower).  The communication diagram is shown in Figure 11.34, the flow of events in Figure 11.35, and the equivalent sequence diagram in Figure 11.36.
+
+
+
+
+Figure 11.34.  A communication diagram of the realization of the scenario of Figure 11.14 of the Return Book use case of the library circulation system.
+
+
+The librarian scans the barcode on the book the borrower wishes to return (1).  The circulation system updates the book data (2–3), and informs the librarian that the book is on hold for another borrower (4–6).
+Figure 11.35.  The flow of events of the realization of the scenario of Figure 11.13 of the Return Book use case of the library circulation system.
+
+
+ 
+Figure 11.36.  A sequence diagram equivalent to the communication diagram of Figure 11.34.  The flow of events is therefore as shown in Figure 11.35.
+
+
+
+Figure 11.37.  Class diagram showing the classes that realize the Add or Remove Book use case of the library circulation system.
+
+
+	Use case Add or Remove Book:
+
+	The class diagram is shown in Figure 11.37.  Consider the scenarios of Figure 11.15 and Figure 11.16.  The communication diagram is shown in Figure 11.38, the flow of events in Figure 11.39, and the equivalent sequence diagram in Figure 11.40.
+
+
+
+Figure 11.38.  A communication diagram of the realization of the scenarios of Figures 11.15 and 11.16 of the Add or Remove Book use cases of the library circulation system.
+
+
+The librarian inputs the details of the book he or she wishes to add or remove (1).  The circulation system updates the book data (2–3), and informs the librarian that this has been done (4–6).
+Figure 11.39.  The flow of events of the realization of the scenarios of Figures 11.15 and 11.16 of the Add or Remove Book use case of the library circulation system, respectively.
+
+
+
+
+Figure 11.40.  A sequence diagram equivalent to the communication diagram of Figure 11.38.  The flow of events is therefore again shown in Figure 11.39.
+
+
+
+Figure 11.41.  A communication diagram of the realization of the scenario of Figure 11.17 of the Hold Book use case of the library circulation system.
+
+
+	Use case Hold Book:
+
+	The class diagram is yet again Figure 11.24.  
+
+	First, consider the scenario of Figure 11.17.  The communication diagram is shown in Figure 11.41, the flow of events in Figure 11.42, and the corresponding sequence diagram in Figure 11.43.
+
+
+The librarian scans the card of the borrower and inputs details of the book on which the borrower wishes a hold to be placed (1).  The circulation system determines the hold status of the relevant book data (2–3), and informs the librarian that the book is on hold for another reader (4–6).
+Figure 11.42.  The flow of events of the realization of the scenario of Figure 11.17 of the Hold Book use case of the library circulation system.
+
+
+
+Figure 11.43.  A sequence diagram equivalent to the communication diagram of Figure 11.41.  The flow of events therefore is shown in Figure 11.42.
+
+
+
+Figure 11.44.  A communication diagram of the realization of the scenario of Figure 11.18 of the Hold Book use case of the library circulation system.
+
+
+The librarian scans the card of the borrower and inputs details of the book on which the borrower wishes a hold to be placed (1).  The circulation system determines the hold status of the relevant book data (2–3), and informs the librarian that the book is now on hold for that reader (4–6).
+Figure 11.45.  The flow of events of the realization of the scenario of Figure 11.18 of the Check Out Book use case of the library circulation system.
+
+
+	Now consider the scenario of Figure 11.18.  The communication diagram is shown in Figure 11.44, the flow of events in Figure 11.45, and the corresponding sequence diagram in Figure 11.46.
+
+
+Figure 11.46.  A sequence diagram equivalent to the communication diagram of Figure 11.44.  The flow of events is therefore as shown in Figure 11.45.
+
+
+
+	Use case Query Catalog:
+
+	The class diagram is shown in Figure 11.47.  
+
+	First, consider the scenario of Figure 11.19.  The communication diagram is shown in Figure 11.48, the flow of events in Figure 11.49, and the corresponding sequence diagram in Figure 11.50.
+
+
+Figure 11.47.  Class diagram showing the classes that realize the Query Catalog use case of the library circulation system.
+
+
+
+Figure 11.48.  A communication diagram of the realization of the scenarios of Figures 11.19 through 11.21 of the Query Catalog use case of the library circulation system.
+
+
+
+The borrower inputs the details of his or her query (1).  The circulation system determines the answer to the query (2), and sends the answer to the borrower (3–4).
+Figure 11.49.  The flow of events of the realization of the scenario of Figures 11.19 through 11.21 of the Query Catalog use case of the library circulation system.
+
+
+	
+
+Figure 11.50.  A sequence diagram equivalent to the communication diagram of Figure 11.48.  The flow of events is therefore as shown in Figure 11.49.
+
+
+
+ Figure 11.51.  A communication diagram of the realization of the scenario of Figure 11.20 of the Query Catalog use case of the library circulation system.
+
+
+	Now consider 	the scenario of Figure 11.20.  The communication diagram is shown in Figure 11.51, the flow of events in Figure 11.52, and the corresponding sequence diagram in Figure 11.53.
+
+
+The librarian inputs the details of his or her query (1).  The circulation system determines the answer to the query (2), and sends the answer to the librarian (3–4).
+Figure 11.52.  The flow of events of the realization of the scenario of Figure 11.20 of the Query Catalog use case of the library circulation system.
+
+	
+
+Figure 11.53.  A sequence diagram equivalent to the communication diagram of Figure 11.51.  The flow of events is therefore as shown in Figure 11.52.
+
+
+	Finally, consider the scenario of Figure 11.21.  The communication diagram is identical to Figure 11.48, the flow of events to Figure 11.49, and the corresponding sequence diagram to Figure 11.50.
+
+
+
+Figure 11.54.  Second iteration of the class diagram of the library circulation system.
+
+
+	The second iteration of the class diagram is shown in Figure 11.54.  It combines the class diagrams of Figures 11.22, 11.24, 11.37, and 11.47.
+
+11.20:	In this solution, subheadings are underlined.
+
+	An extended scenario for the use case of Problem 10.15 (Figure 10.9) appears in Figure 11.55.
+
+Candidate entity classes are determined using noun extraction.
+
+	Description of software product in a single paragraph: A software product for determining whether a bank statement is correct is to be constructed.  The data to be used are: the balance at the beginning of the month; the number, date, and amount of each check; the date and amount of each deposit; and the balance at the end of the month.
+
+	Identify the nouns: A software product for determining whether a bank statement is correct is to be constructed.  The data to be used are: the balance at the beginning of the month; the number, date, and amount of each check; the date and amount of each deposit; and the balance at the end of the month.
+
+1. 	Sort the checks in check-number order.  For each check, there is an entry marked in the bank statement that matches the check number, and the amount for that entry is the same as that on the check.  
+
+2.	Sort the deposit slips according to date of deposit.  For each deposit slip, there is an entry marked in the statement that matches the date of deposit and the amount of the deposit.
+
+3.	All items on the statement have been marked.
+
+4.	Add the amount of all deposits to the beginning balance, and from that sum subtract the total of all the checks.  The result is equal to the ending balance.A. 	For at least one check, there is an entry in the bank statement that does not match the check number.
+
+B. 	For at least one check, there is an entry in the bank statement that matches the check number, but the amount for that entry is not the same as that on the check.
+
+C. 	For at least one deposit slip, there is an entry in the statement that does not match the date of the deposit.
+
+D. 	For at least one deposit slip, there is an entry in the statement that does not match the amount of the deposit.
+
+E. 	After all checks and deposits have been processed, one or more items on the statement have not been marked.
+
+F. 	Adding the total of all deposits to the beginning balance and then subtracting the total of all the checks does not yield the ending balance.
+Figure 11.55.  An extended scenario for the software product to determine whether a bank statement is correct.
+
+
+
+ 	With regard to the nouns in the previous paragraph, product, balance, data, and month are abstract nouns and are therefore unlikely to be classes.  Also, number, date, and amount relate to the checks, and date and amount relate to the deposits.  This leaves Balance Class, Check Class, and Deposit Slip Class as candidate entity classes.
+
+	The initial class diagram is shown in Figure 11.56.
+
+	The initial statechart is shown in Figure 11.57.
+
+	
+Figure 11.56.  The initial class diagram for the software product to determine whether a bank statement is correct.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.57.  The initial statechart of the software product to determine whether a bank statement is correct.
+
+
+	The boundary class is Screen Class.
+
+	The control class is Determine Correctness Class.
+
+
+Figure 11.58.  The class diagram showing the classes that realize the use case of Figure 10.8.
+
+
+	The class diagram for the use case of Figure 10.8 (the only use case) is shown in Figure 11.58.
+
+
+Figure 11.59.  A communication diagram of the realization of the normal scenario of Figure 11.55 of the use case of the software product to determine whether a bank statement is correct.
+
+
+The account holder requests the software product to determine whether a bank statement is correct (1–2).  The system obtains the beginning and ending balances (3–4), sorted checks (5–6), and sorted deposit slips (7–8).  The software product then determines whether the bank statement is correct, and informs the account holder in this regard (9–10).
+Figure 11.60.  The flow of events of the realization of the scenario of Figure 11.55 of the use case of the software product to determine whether a bank statement is correct.
+
+
+	The communication diagram is shown in Figure 11.59, the flow of events in Figure 11.60, and the equivalent sequence diagram in Figure 11.61.
+
+	There is only one use case (Figure 10.8), so the final class diagram is the class diagram of Figure 11.56.
+
+	
+
+
+Figure 11.61.  A sequence diagram equivalent to the communication diagram of Figure 11.59.  The flow of events is therefore as shown in Figure 11.60.
+
+
+
+11.21	In this solution, headings are underlined.
+
+	Scenarios for the use cases of Figure 10.16 appear in Figures 11.62 through 11.66.
+
+1. 	The customer inserts his or her card into the ATM and then enters his or her PIN.
+
+2.	The ATM verifies that the PIN is correct.
+
+3.	The menu appears on the screen.
+
+4.	The customer chooses to deposit funds.
+
+5. 	The customer selects an account.
+
+6.	The customer enters the amount to be deposited.
+
+	The ATM opens its deposit slot.  The customer puts the envelope containing the deposit into the slot.  The ATM takes the envelope and closes the slot.
+
+7.	The circulation system sends a message to update the customer’s account balance once the contents of the envelope have been checked.
+
+8. 	The ATM prints a receipt showing the date, the amount of the deposit, the account number, and the balance before deposit.
+
+9. 	The menu reappears on the screen.
+
+10. 	The customer chooses to quit.  The ATM returns the card.
+Figure 11.62.  A scenario of the Deposit Funds use case of the ATM software product.
+
+
+1. 	The customer inserts the card into the ATM and then enters his or her PIN.
+
+2.	The ATM verifies that the PIN is correct.
+
+3.	The menu appears on the screen.
+
+4.	The customer chooses to withdraw funds.
+
+5. 	The customer selects an account.
+
+6.	The customer enters the amount to be withdrawn (up to $200 in units of $20).
+
+7.	The ATM determines that the customer does not have adequate funds in his or her account.  Transaction is terminated and the ATM returns the card.
+Figure 11.63.  First scenario of the Withdraw Funds use case of the ATM software product.
+
+
+1. 	The customer inserts the card into the ATM and then enters his or her PIN.
+
+2.	The ATM verifies that the PIN is correct.
+
+3.	The menu appears on the screen.
+
+4.	The customer chooses to withdraw funds.
+
+5. 	The customer selects an account.
+
+6.	The customer enters the amount to be withdrawn (up to $200 in units of $20).
+
+7.	The ATM determines that the customer has adequate funds in his or her account.
+
+	The ATM gives the money to the customer.
+
+8.	The software product sends a message to update the customer’s account balance to reflect the withdrawal.
+
+9. 	The ATM prints a receipt showing the date, the amount of the withdrawal, the account number, and the balance after the withdrawal.
+
+10.	The menu reappears on the screen.
+
+11. 	The customer chooses to quit.  The ATM returns the card.
+Figure 11.64.  Second scenario of the Withdraw Funds use case of the ATM software product.
+
+
+1. 	The customer inserts the card into the ATM and then enters his or her PIN.
+
+2.	The ATM verifies that the PIN is correct.  If not, the transaction is terminated and the ATM returns the card.
+
+3.	The menu appears on the screen.
+
+4.	The customer chooses to determine his or her balance.
+
+5. 	The customer selects an account.
+
+6. 	The ATM displays the account balance on the screen.
+
+7.	The menu reappears on the screen.
+
+8. 	The customer chooses to quit.  The ATM returns the card.
+Figure 11.65.  A scenario of the Determine Balance use case of the ATM software product.
+
+
+1. 	The customer inserts the card into the ATM and then enters his or her PIN.
+
+2.	The ATM verifies that the PIN is correct.
+
+3.	The menu appears on the screen.
+
+4.	The customer chooses to transfer funds.
+
+5. 	The customer selects the source account.
+
+6. 	The customer selects the destination account.
+
+7.	The customer enters the amount to be transferred.
+
+8.	The ATM determines that the customer has adequate funds in his or her source account.
+
+9.	The software product updates the balance in both the source account and the destination account.
+
+10. 	The ATM prints a receipt showing the date, the amount transferred, the account numbers, and the balances in both accounts after the transfer.
+
+11.	The menu reappears on screen.
+
+12. 	The customer chooses to quit.  The ATM returns the card.
+Figure 11.66.  Description of the Transfer Funds use case of the ATM software product.
+
+
+	
+Figure 11.67.  The initial class diagram for the ATM software product.
+
+
+	Candidate entity classes are determined using noun extraction.
+
+	Description of software product in a single paragraph: A software product is to be constructed for an ATM.  After a customer’s card has been successfully verified, the customer may deposit and withdraw money from an account, inquire about the balance of an account, and transfer funds between two separate accounts.
+
+	Identify the nouns: A software product is to be constructed for an ATM.  After a customer’s card has been successfully verified, the customer may deposit and withdraw money from an account, inquire about the balance of an account, and transfer funds between two separate accounts.
+
+	With regard to the nouns in the previous paragraph, ATM, card, and customer do not change while the product is operating; in object-oriented terminology, they do not have an internal state.  Also, product, funds and money are abstract nouns.  Finally, balance is a property of account.  Accordingly, the sole candidate entity class is Account Class.
+
+	The initial class diagram is shown in Figure 11.67.
+
+	The initial statechart is shown in Figure 11.68.
+
+	The boundary class is ATM Screen Class.
+
+	The control class is ATM Control Class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.68.  The initial statechart of the ATM software product.
+
+
+
+
+
+Figure 11.69.  Class diagram showing the classes that realize all four of the use cases of the ATM software product.
+
+	Use case Deposit Funds:
+
+	The class diagram for the Deposit Funds use case is shown in Figure 11.69.  
+
+	Consider the scenario of Figure 11.62.  The communication diagram is shown in Figure 11.70, the flow of events in Figure 11.71, and the equivalent sequence diagram in Figure 11.72.
+
+
+
+Figure 11.70.  A communication diagram of the realization of the scenario of Figure 11.62 of the Deposit Funds use case of the ATM software product.
+
+
+The customer inserts his or her card and inputs the PIN.  The PIN is verified by the ATM (1–5).  The customer chooses to deposit funds, specifies the amount to be deposited and the account (6–7).  The account balance will be updated after the deposit has been checked (8–10).  A receipt is printed and the card is returned (11).  
+Figure 11.71.  The flow of events of the realization of the scenario of Figure 11.62 of the Deposit Funds use case of the ATM software product
+
+
+
+
+Figure 11.72.  A sequence diagram equivalent to the communication diagram of Figure 11.70.  The flow of events is therefore as shown in Figure 11.71.
+
+	Use case Withdraw Funds:
+
+	The class diagram is again Figure 11.69.  Consider the scenario of Figure 11.63.  The communication diagram is shown in Figure 11.73, the flow of events in Figure 11.74, and the equivalent sequence diagram in Figure 11.75.
+
+Figure 11.73.  A communication diagram of the realization of the scenario of Figure 11.63 of the Withdraw Funds use case of the ATM software product.
+
+	
+The customer inserts his or her card and inputs the PIN.  The PIN is verified by the ATM (1–5).  The customer chooses to withdraw funds, and specifies the amount to be withdrawn and the account (6–7).  The software product determines that there are insufficient funds in the account (8), displays a message this effect and returns the card (9–11).
+Figure 11.74.  The flow of events of the realization of the scenario of Figure 11.63 of the Withdraw Funds use case of the ATM software product.
+
+
+
+Figure 11.75.  A sequence diagram equivalent to the communication diagram of Figure 11.73.  The flow of events is therefore as shown in Figure 11.74.
+
+
+
+Figure 11.76.  A communication diagram of the realization of the scenario of Figure 11.64 of the Withdraw Funds use case of the ATM software product.
+
+
+The customer inserts his or her card and inputs the PIN.  The PIN is verified by the ATM (1–5).  The customer chooses to withdraw funds, specifies the amount and the account (6–7).  The software product determines that there are sufficient funds in the account (8–10), the money is given to the customer, a receipt is printed, and the card is returned (11–13).
+Figure 11.77.  The flow of events of the realization of the scenario of Figure 11.64 of the Withdraw Funds use case of the ATM software product.
+
+
+	Now consider the scenario of Figure 11.64.  The communication diagram is shown in Figure 11.76, the flow of events in Figure 11.77, and the equivalent sequence diagram in Figure 11.78.
+
+
+Figure 11.78.  A sequence diagram equivalent to the communication diagram of Figure 11.76.  The flow of events is therefore again shown in Figure 11.77.
+
+
+	Use case Determine Balance:
+
+	As before, the class diagram is shown in Figure 11.69.  
+
+	Consider the scenario of Figure 11.65.  The communication diagram is shown in Figure 11.79, the flow of events in Figure 11.80, and the corresponding sequence diagram in Figure 11.81.
+
+
+Figure 11.79.  A communication diagram of the realization of the scenario of Figure 11.65 of the Determine Balance use case of the ATM software product.
+
+
+The customer inserts his or her card and inputs the PIN.  The PIN is verified by the ATM (1–5).  The customer chooses to display the balance in a specific account (6–7).  The software product determines the balance (8–10).  The ATM displays the balance and returns the card (11)
+Figure 11.80.  The flow of events of the realization of the scenario of Figure 11.65 of the Determine Balance use case of the ATM software product.
+
+
+
+
+Figure 11.81.  A sequence diagram equivalent to the communication diagram of Figure 11.79.  The flow of events therefore is shown in Figure 11.80.
+
+	Use case Transfer Funds:
+
+	The class diagram is once again shown in Figure 11.69.  
+
+	Consider the scenario of Figure 11.66.  The communication diagram is shown in Figure 11.82, the flow of events in Figure 11.83, and the corresponding sequence diagram in Figure 11.84.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Figure 11.82.  A communication diagram of the realization of the scenario of Figure 11.66 of the Transfer Funds use case of the ATM software product.
+
+
+The customer inserts his or her card and inputs the PIN.  The PIN is verified by the ATM (1–5).  The customer chooses to transfer funds, and specifies the amount to be transferred, the source account and the destination account (6–7).  The software product determines that there are sufficient funds in the source account (8–10), the money is transferred to the new account, a receipt is printed, and the card is returned (11–13).
+Figure 11.83.  The flow of events of the realization of the scenario of Figure 11.66 of the Transfer Funds use case of the ATM software product.
+
+
+
+
+
+Figure 11.84.  A sequence diagram equivalent to the communication diagram of Figure 11.82.  The flow of events is therefore as shown in Figure 11.83.
+
+
+Figure 11.85.  Second iteration of the class diagram of the ATM software product.
+
+
+	The second iteration of the class diagram is shown in Figure 11.85.  It combines the class diagrams of Figures 11.67 and 11.69.
+
+
+
+	
+TERM PROJECT
+11.22:	In this solution, subheadings are underlined.	  Class diagrams, communication diagrams, and sequence diagrams were drawn using IBM Rational Rose, which insisted on treating actor Assistant as an object, an instance of the (nonexistent) Assistant Class.  Accordingly, whenever : Assistant appears in a Rose diagram, it should be viewed as if it were the actor Assistant.  Similarly, whenever : Customer appears in a Rose diagram, it should be viewed as if it were the actor Customer.
+
+	Scenarios for the 17 use cases of Osric’s Office Appliances and Decor depicted in Figure 10.17(a) appear in Figures 11.86 to 11.102.  In particular, scenarios of the three use cases of Figure 10.17(b) denoted by Print Reports in Figure 10.17(a) appear in Figures 11.98 through 11.102, and scenarios of the three use cases of Figure 10.17(c) denoted by Maintain Technician in Figure 10.17(a) appear in Figures 11.90 through 11.92.  For brevity, only one scenario for each use case is presented here.
+
+
+The assistant chooses to search for a customer.
+
+1. 	The assistant enters the customer name.
+
+The customer with that name is found.
+
+2. 	The software product displays the customer name, number, and priority.
+A. 	If the customer is not found, the software product displays an error message.
+
+Figure 11.86.  An extended scenario of the Search Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to add a new customer.
+
+1. 	The assistant enters the following information provided by the customer: 
+		Customer name
+		Billing address
+		Phone number
+
+2. 	The software product displays a message on the screen that the customer has been successfully added; the customer number is displayed.
+A. 	If the customer is already in the file, the software product displays an error message.
+
+Figure 11.87.  An extended scenario of the Add Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to update a customer record.
+
+1. 	The assistant enters the customer number.
+
+The software product finds the customer
+
+2. 	The assistant enters the relevant information to update the customer record.
+
+3. 	The software product displays a message on the screen that the customer record has been successfully updated.
+A. 	If the customer is not found, the software product displays an error message.
+
+Figure 11.88.  An extended scenario of the Update Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to update a customer priority.
+
+1. 	The assistant enters the customer number
+
+The software product finds the customer.
+
+2. 	The software product updates the customer priority
+
+3, 	The software product displays a message on the screen that the customer priority has been successfully updated.
+A. 	If the customer is not found, the software product displays an error message.
+
+Figure 11.89.  An extended scenario of the Update Customer Priority use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to add a new technician.
+
+1. 	The assistant enters the following information provided by the technician: technician name and shift.
+
+2. 	The software product displays a message on the screen that the technician has been successfully added; the technician number is displayed.
+Figure 11.90.  A scenario of the Add Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to update a technician record.
+
+1. 	The assistant enters the technician number.
+
+The software product finds the technician.
+
+2. 	The assistant enters the relevant information to update the technician record.
+
+3. 	The software product displays a message on the screen that the technician record has been successfully updated.
+A. 	If the technician is not found, the software product displays an error message.
+
+Figure 11.91.  An extended scenario of the Update Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to delete a technician record.
+
+1. 	The assistant enters the technician number.
+
+The software product finds the technician.
+
+2. 	The software deletes the technician record.
+
+3. 	The software product displays a message on the screen that the technician record has been successfully updated.
+A. 	If the technician is not found, the software product displays an error message.
+
+Figure 11.92.  An extended scenario of the Delete Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to estimate the waiting time for service.
+
+1. 	The assistant enters the customer number.
+
+2. 	The software product estimates the service wait time and the worse-case wait time (where the customer has to reach priority four to receive service).
+
+3. 	The software product displays the estimates on the screen.
+
+The assistant conveys the waiting times to the customer, who decides to wait for service.
+A. 	If the customer is unwilling to wait that long, nothing is done.
+
+Figure 11.93.  An extended scenario of the Estimate Service Wait Time use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+The assistant chooses to add a service request.
+
+1. 	 The assistant enters the service request information into the software product.
+
+2. 	The software product adds the request to the file.
+
+3. 	The software displays an acknowledgment on the screen.
+A. 	If the technician is not found, the software product displays an error message.
+	
+Figure 11.94.  An extended scenario of the Add Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to assign service requests to available technicians
+
+1. 	 The assistant enters the service request information into the software product.
+
+2. 	The software product assigns requests to technicians.
+
+3. 	The software displays a message on the screen that technician have been successfully assigned to the service requests.
+A. 	If the assignment cannot be performed, the software product displays an error message.
+	
+Figure 11.95.  An extended scenario of the Assign Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to update a service request for a night technician.
+
+1. 	The technician calls the client and asks if night service is needed.
+
+2. 	The assistant enters the service request number and the response of the customer.  
+
+3. 	The software product updates the service request
+
+4. 	The software product displays a message on the screen that the service request has been successfully updated
+A. 	If the service request number cannot be found, an error message is displayed.
+
+Figure 11.96.  A scenario of the Update Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+	
+The assistant chooses to complete a service request.
+
+1. 	The assistant enters the service request number provided by the technician.
+
+The service request number is found.
+
+2. 	The assistant enters the service request information into the software product.
+
+3. 	The software product updates the service request information.
+
+4. 	If appropriate, the software product updates the customer priority on the basis of the previous number of service requests.
+
+5. 	The software product displays a message on the screen that the service request has been successfully completed.
+A. 	If the service request number cannot be found, an error message is displayed.
+
+Figure 11.97.  A scenario of the Complete Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+	
+The assistant chooses to print the invoice report.
+
+1. 	The software product prints the invoice report to a file: 
+		Customer name and address
+		Osric’s remit-to address; 
+		Number of day and night blocks being billed
+		Total amount billed
+		Date Invoice was printed
+		Date due
+
+2. 	The software product displays a message on the screen that the report has been printed successfully.
+Figure 11.98.  A scenario of the Print Invoice Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the waiting list report.
+
+1. 	The software product prints the waiting list report to a file (ordered by service request priority and date/time of call):
+		Customer name and number
+		Customer phone number
+		Service request priority
+		Service request number
+		Service request comments
+		Date/time service was entered
+		Estimated service wait time
+
+2. 	The software product displays a message on the screen that the report has been printed successfully.
+Figure 11.99.  A scenario of the Waiting List Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the statistics report.
+
+1. 	The software product prints the statistics report to a file:
+		Average waiting time before a job is started
+		Average queue length
+		The percentage of time the queue is empty
+		Number of blocks when a technician is idle
+		Number of jobs that cannot be continued at night due to not having a night technician
+		Average waiting time for customers for each priority
+
+2. 	The software product displays a message on the screen that the report has been printed successfully.
+Figure 11.100.  A scenario of the Statistics Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the service requests assignments report.
+
+1. 	The assistant enters the shift.
+
+2. 	The software product prints the service requests assignments report to a file (ordered by technician name):
+		Customer name and number 
+		Customer address and phone number
+		Technician name and number
+		Service request number 
+		Service request comments
+
+3. 	The software product displays a message on the screen that the report has been printed successfully.
+Figure 11.101.  A scenario of the Print Service Requests Assignments Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the outstanding job report.
+
+1. 	The software product prints the outstanding job report to a file (ordered by service request priority and date/time of call):
+		Customer name and number 
+		Customer phone number
+		Service request priority
+		Service request number
+		Service request comments
+		Date/time service request entered
+
+2. 	The software product displays a message on the screen that the report has been printed successfully.
+Figure 11.102.  A scenario of the Print Outstanding Job Report use case of the Osric’s Office Appliances and Decor software product.
+
+	Candidate entity classes are determined using noun extraction.
+
+Description of software product in a single paragraph: A software product is to be constructed to perform data processing for a company that responds to telecommunication service requests.  In particular, the product must assign technicians to requests for service from customers and generate bills, and must print various reports regarding waiting lists and outstanding jobs.
+
+	Identify the nouns: A software product is to be constructed to perform data processing for a company that responds to telecommunication service requests.  In particular, the product must assign technicians to requests for service from customers and generate bills, and must print various reports regarding waiting lists and outstanding jobs.
+
+	With regard to the nouns in the previous paragraph, technician and customer are actors.  Accordingly, these nouns cannot correspond to classes.  In addition, product, data processing, company, request, service, and job are abstract nouns.  Noun bill corresponds to a report; so these two will probably end up as boundary classes.  A waiting list is not permanent, so it is unlikely to be an entity class.  This leaves Technician Class and Customer Class as the sole candidate classes.
+
+	However, on rereading Appendix A of Object-Oriented Software Engineering, it is clear that the key aspect of the product is that it manipulates service requests.  Accordingly, we also need a third entity class, namely, Service Request Class.  Finally, there are number of reports to be printed, so Reports Class is the fourth candidate entity class.  This yields the first iteration of the class diagram shown in Figure 11.103.
+
+
+
+
+
+
+
+Figure 11.103.  The first iteration of the class diagram of the Osric’s Office Appliances and Decor product.
+
+
+	There are three candidate control classes: Maintain Technician Class, Maintain Customer Class, and Maintain Service Request Class.  These classes will perform the additions, updates, and deletions, and also assign technicians to the service requests.
+
+	Turning to the candidate boundary classes, we need one class for user interface (Osric Application Class), one class for data input (Get Input Class), and one class for each of the five reports (Print Invoice Report Class, Print Waiting List Report Class, Print Outstanding Job Report Class, Print Service Request Assignments Report Class, and Print Statistics Report Class).  This yields seven boundary classes.
+
+	The second iteration of the class diagram appears in Figure 11.104.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.104.  The second iteration of the class diagram of the Osric’s Office Appliances and Decor product.
+
+
+The first iteration of the statechart appears in Figure 11.105.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.105.  The first iteration of the statechart of the Osric’s Office Appliances and Decor product.
+
+
+	We now re-examine Figure 11.104, the second iteration of the class diagram.  Consider entity class Technician Data Class.  In fact, this is not a pure entity class.  In addition to storing technician data, this class is responsible for writing technician data to a file and reading technician data from that file.  Accordingly, we refine this “mixed” Technician Data Class into two classes: a “pure” entity class (Technician Class) and a boundary class, Technical File Class, which is responsible for writing and reading technician data.  Customer Data Class and Service Requests Data Class similarly need to be split into two “pure” classes.  The result is shown in Figure 11.106.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.106.  The third iteration of the class diagram of the Osric’s Office Appliances and Decor product.
+
+	Use case Search Customer:
+
+	The class diagram is shown in Figure 11.107.  
+
+	Consider the extended scenario of Figure 11.86.  The communication diagram is shown in Figure 11.108, the flow of events in Figure 11.109, and the corresponding sequence diagram in Figure 11.110.  
+
+
+Figure 11.107.  Class diagram showing the classes that realize the Search Customer use case of the Osric’s Office Appliances and Decor software product. As stated at the beginning of the solution to the Problem 11.18, IBM Rational Rose incorrectly depicts actor Customer as an instance of the (non-existent) Customer Class, and actor Assistant as an instance of the (non-existent) Customer Class.
+
+
+
+
+
+Figure 11.108.  A communication diagram of the realization of the extended scenario of Figure 11.86 of the Search Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+The assistant chooses to search for a customer (1).  The software product solicits the customer’s name (2–5), obtains information about the customer (6–7) and displays it (8–10).
+Figure 11.109.  The flow of events of the realization of the extended scenario of Figure 11.86 of the Search Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.110.  A sequence diagram equivalent to the communication diagram of Figure 11.108.  The flow of events therefore is shown in Figure 11.109.
+
+	Use case Add Customer:
+
+	The class diagram is shown in Figure 11.111.  
+
+	Consider the extended scenario of Figure 11.87.  The communication diagram is shown in Figure 11.112, the flow of events in Figure 11.113, and the corresponding sequence diagram in Figure 11.114.
+
+
+Figure 11.111.  Class diagram showing the classes that realize the Add Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.112.  A communication diagram of the realization of the extended scenario of Figure 11.87 of the Add Customer use case of the Osric’s Office Appliances and Decor software product.
+
+The assistant chooses to add a customer (1).  The software product solicits the customer information (2–5), checks that the customer does not already exist (6–7), and if not adds the customer information to the file (8–7), and displays it (9–12).
+Figure 11.113.  The flow of events of the realization of the extended scenario of Figure 11.87 of the Add Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.114.  A sequence diagram equivalent to the communication diagram of Figure 11.112.  The flow of events therefore is shown in Figure 11.113.
+
+
+	Use case Update Customer:
+
+	The class diagram is shown in Figure 11.115.  
+
+	Consider the extended scenario of Figure 11.88.  The communication diagram is shown in Figure 11.116, the flow of events in Figure 11.117, and the corresponding sequence diagram in Figure 11.118.
+
+
+Figure 11.115.  Class diagram showing the classes that realize the Update Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.116.  A communication diagram of the realization of the extended scenario of Figure 11.88 of the Update Customer use case of the Osric’s Office Appliances and Decor software product.
+
+The assistant chooses to update a customer record (1).  The software product solicits the customer information (2–5), retrieves the current customer information (6–7), obtains the new priority (8), updates the customer record (9–10), and displays a message that the record has been updated (11–14).
+Figure 11.117.  The flow of events of the realization of the extended scenario of Figure 11.88 of the Update Customer use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.118.  A sequence diagram equivalent to the communication diagram of Figure 11.116.  The flow of events therefore is shown in Figure 11.117.
+
+
+	Use case Update Customer Priority:
+
+	The class diagram is shown in Figure 11.119.  
+
+	Consider the extended scenario of Figure 11.89.  The communication diagram is shown in Figure 11.120, the flow of events in Figure 11.121, and the corresponding sequence diagram in Figure 11.122.
+
+
+
+Figure 11.119.  Class diagram showing the classes that realize the Update Customer Priority use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.120.  A communication diagram of the realization of the extended scenario of Figure 11.89 of the Update Customer Priority use case of the Osric’s Office Appliances and Decor software product.
+
+The assistant chooses to update a customer service request priority (1).  The software product collects service request information (2–5), updates the customer service request priority (6), and displays a successful completion message (9–12).
+Figure 11.121.  The flow of events of the realization of the extended scenario of Figure 11.89 of the Update Customer Priority use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.122.  A sequence diagram equivalent to the communication diagram of Figure 11.120.  The flow of events therefore is shown in Figure 11.121.
+
+
+	Use case Add Technician:
+
+	The class diagram is shown in Figure 11.123.  
+
+	Consider the scenario of Figure 11.90.  The communication diagram is shown in Figure 11.124, the flow of events in Figure 11.125, and the corresponding sequence diagram in Figure 11.126.
+
+
+Figure 11.123.  Class diagram showing the classes that realize the Add Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.124.  A communication diagram of the realization of the scenario of Figure 11.90 of the Add Technician use case of the Osric’s Office Appliances and Decor software product.
+
+The assistant chooses to add a technician (1).  The software product solicits technician information (2–5), adds the technician information to the file (6), and displays a successful completion message (7–10).
+Figure 11.125.  The flow of events of the realization of the scenario of Figure 11.90 of the Add Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.126.  A sequence diagram equivalent to the communication diagram of Figure 11.124.  The flow of events therefore is shown in Figure 11.125.
+
+
+
+	Use case Update Technician:
+
+	The class diagram is shown in Figure 11.127.  
+
+	Consider the scenario of Figure 11.91.  The communication diagram is shown in Figure 11.128, the flow of events in Figure 11.129, and the corresponding sequence diagram in Figure 11.130.
+
+
+Figure 11.127.  Class diagram showing the classes that realize the Update Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.128.  A communication diagram of the realization of the scenario of Figure 11.91 of the Update Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to update a technician record (1).  The software product solicits the technician information (2–5), retrieves the current technician information (6–7), obtains the new information (8), updates the technician record (9–10), and displays a message that the record has been updated (11–14).
+Figure 11.129.  The flow of events of the realization of the scenario of Figure 11.91 of the Update Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.130.  A sequence diagram equivalent to the communication diagram of Figure 11.128.  The flow of events therefore is shown in Figure 11.129. 
+	Use case Delete Technician:
+
+	The class diagram is shown in Figure 11.131.  
+
+	Consider the extended scenario of Figure 11.92.  The communication diagram is shown in Figure 11.132, the flow of events in Figure 11.133, and the corresponding sequence diagram in Figure 11.134.
+
+
+
+Figure 11.131.  Class diagram showing the classes that realize the Delete Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.132.  A communication diagram of the realization of the extended scenario of Figure 11.91 of the Delete Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to delete a technician record (1).  The software product solicits the technician information (2–5), deletes the technician record (6–10), and displays a message that the record has been deleted (7–10).
+Figure 11.133.  The flow of events of the realization of the extended scenario of Figure 11.92 of the Delete Technician use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.134.  A sequence diagram equivalent to the communication diagram of Figure 11.132.  The flow of events therefore is shown in Figure 11.133.
+
+	Use case Estimate Service Wait Time:
+
+	The class diagram is shown in Figure 11.135.  
+
+	Consider the extended scenario of Figure 11.93.  The communication diagram is shown in Figure 11.136, the flow of events in Figure 11.137, and the corresponding sequence diagram in Figure 11.138.
+
+
+
+Figure 11.135.  Class diagram showing the classes that realize the Estimate Service Wait Time use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.136.  A communication diagram of the realization of the extended scenario of Figure 11.93 of the Estimate Service Wait Time use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to estimate the service wait time for a customer (1).  The software product acquires the necessary data (2–6), obtains the customer number (7–9), determines the customer’s priority (10–12), and displays the wait time (13–14).
+Figure 11.137.  The flow of events of the realization of the extended scenario of Figure 11.93 of the Estimate Service Wait Time use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.138.  A sequence diagram equivalent to the communication diagram of Figure 11.136.  The flow of events therefore is shown in Figure 11.137.
+	Use case Add Service Request:
+
+	The class diagram is shown in Figure 11.139.  
+
+	Consider the extended scenario of Figure 11.94.  The communication diagram is shown in Figure 11.140, the flow of events in Figure 11.141, and the corresponding sequence diagram in Figure 11.142.
+
+
+
+Figure 11.139.  Class diagram showing the classes that realize the Add Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.140.  A communication diagram of the realization of the extended scenario of Figure 11.94 of the Add Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to add a service request (1).  The software product acquires the necessary data, including customer number (2–6), determines the customer’s priority (7–10), adds the request to the file (11–12) and displays an acknowledgment (13–16).
+Figure 11.141.  The flow of events of the realization of the extended scenario of Figure 11.94 of the Add Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.142.  A sequence diagram equivalent to the communication diagram of Figure 11.140.  The flow of events therefore is shown in Figure 11.141.
+	Use case Assign Service Request:
+
+	The class diagram is shown in Figure 11.143.  
+
+	Consider the extended scenario of Figure 11.95.  The communication diagram is shown in Figure 11.144, the flow of events in Figure 11.145, and the corresponding sequence diagram in Figure 11.146.
+
+
+
+Figure 11.143.  Class diagram showing the classes that realize the Assign Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.144.  A communication diagram of the realization of the extended scenario of Figure 11.95 of the Assign Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to assign service requests to technicians (1).  The software product acquires the necessary service request data (2–8) and technician data (9–12), assigns technicians to service requests (13–14), and displays an acknowledgment on the screen (15–18).
+Figure 11.145.  The flow of events of the realization of the extended scenario of Figure 11.95 of the Assign Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.146.  A sequence diagram equivalent to the communication diagram of Figure 11.144.  The flow of events therefore is shown in Figure 11.145.
+	Use case Update Service Request:
+
+	The class diagram is shown in Figure 11.147.  
+
+	Consider the extended scenario of Figure 11.96.  The communication diagram is shown in Figure 11.148, the flow of events in Figure 11.149, and the corresponding sequence diagram in Figure 11.150.
+
+
+
+Figure 11.147.  Class diagram showing the classes that realize the Update Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.148.  A communication diagram of the realization of the extended scenario of Figure 11.96 of the Update Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to update a service request for a night technician (1).  The software product acquires the necessary data (2–5), determines whether a night technician is needed (6–7) and, if so, updates the service request (8), and displays an acknowledgement message (9–12).
+Figure 11.149.  The flow of events of the realization of the extended scenario of Figure 11.96 of the Update Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.150.  A sequence diagram equivalent to the communication diagram of Figure 11.148.  The flow of events therefore is shown in Figure 11.149.
+	Use case Complete Service Request:
+
+	The class diagram is shown in Figure 11.151.  
+
+	Consider the extended scenario of Figure 11.97.  The communication diagram is shown in Figure 11.152, the flow of events in Figure 11.153, and the corresponding sequence diagram in Figure 11.154.
+
+
+
+Figure 11.151.  Class diagram showing the classes that realize the Complete Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.152.  A communication diagram of the realization of the extended scenario of Figure 11.97 of the Complete Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to complete a service request (1).  The software product acquires the necessary data via the technician (2–5), updates the service request (6–8), updates the customer’s priority if appropriate (9–10), and displays an acknowledgment (11–14).
+Figure 11.153.  The flow of events of the realization of the extended scenario of Figure 11.97 of the Complete Service Request use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.154.  A sequence diagram equivalent to the communication diagram of Figure 11.152.  The flow of events therefore is shown in Figure 11.153.
+	Use case Print Invoice Report:
+
+	The class diagram is shown in Figure 11.155.  
+
+	Consider the extended scenario of Figure 11.98.  The communication diagram is shown in Figure 11.156, the flow of events in Figure 11.157, and the corresponding sequence diagram in Figure 11.158.
+
+
+
+Figure 11.155.  Class diagram showing the classes that realize the Print Invoice Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.156.  A communication diagram of the realization of the extended scenario of Figure 11.98 of the Print Invoice Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the invoice report (1).  The software product acquires the necessary service report data (2–8) and customer data (9–12), prints the report (13–14), and displays an acknowledgment (15–18).
+Figure 11.157.  The flow of events of the realization of the extended scenario of Figure 11.98 of the Print Invoice Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.158.  A sequence diagram equivalent to the communication diagram of Figure 11.156.  The flow of events therefore is shown in Figure 11.157.
+	Use case Print Waiting List Report:
+
+	The class diagram is shown in Figure 11.159.  
+
+	Consider the extended scenario of Figure 11.99.  The communication diagram is shown in Figure 11.160, the flow of events in Figure 11.161, and the corresponding sequence diagram in Figure 11.162.
+
+
+
+Figure 11.159.  Class diagram showing the classes that realize the Print Waiting List Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+
+Figure 11.160.  A communication diagram of the realization of the extended scenario of Figure 11.99 of the Print Waiting List Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the waiting list report (1).  The software product acquires the necessary service request data (2–5) and customer data (6–9), prints the report (10), and displays an acknowledgment (11–14).
+Figure 11.161.  The flow of events of the realization of the extended scenario of Figure 11.99 of the Print Waiting List Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.162.  A sequence diagram equivalent to the communication diagram of Figure 11.160.  The flow of events therefore is shown in Figure 11.161.
+
+	Use case Print Statistics Report:
+
+	The class diagram is shown in Figure 11.163.  
+
+	Consider the extended scenario of Figure 11.100.  The communication diagram is shown in Figure 11.164, the flow of events in Figure 11.165, and the corresponding sequence diagram in Figure 11.166.
+
+
+
+Figure 11.163.  Class diagram showing the classes that realize the Print
+ Statistics Report use case of the Osric’s Office Appliances and Decor
+ software product.
+
+
+Figure 11.164.  A communication diagram of the realization of the extended scenario of Figure 11.100 of the Print Statistics Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the statistics report (1).  The software product acquires the necessary shift data (3-4), technician data (5–8), and service data (9–11), prints the report (12), and displays an acknowledgment (13–16).
+Figure 11.165.  The flow of events of the realization of the extended scenario of Figure 11.100 of the Print Statistics Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.166.  A sequence diagram equivalent to the communication diagram of Figure 11.164.  The flow of events therefore is shown in Figure 11.165.
+	Use case Print Service Requests Assignment Report:
+
+	The class diagram is shown in Figure 11.167.  
+
+	Consider the extended scenario of Figure 11.101.  The communication diagram is shown in Figure 11.168, the flow of events in Figure 11.169, and the corresponding sequence diagram in Figure 11.170.
+
+
+
+Figure 11.167.  Class diagram showing the classes that realize the Print Service Requests Assignment Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.168.  A communication diagram of the realization of the extended scenario of Figure 11.101 of the Print Service Requests Assignment Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print a service request assignment report (1).  The software product acquires the necessary shift data (2–5), service data (6–8), technician data (9–12), and customer data (13–16), prints the report (17–18), and displays an acknowledgment (19–22).
+Figure 11.169.  The flow of events of the realization of the extended scenario of Figure 11.101 of the Print Service Requests Assignment Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+
+Figure 11.170.  A sequence diagram equivalent to the communication diagram of Figure 11.168.  The flow of events therefore is shown in Figure 11.169.
+
+	Use case Print Outstanding Job Report:
+
+	The class diagram is shown in Figure 11.171.  
+
+	Consider the extended scenario of Figure 11.102.  The communication diagram is shown in Figure 11.172, the flow of events in Figure 11.173, and the corresponding sequence diagram in Figure 11.174.
+
+
+
+Figure 11.171.  Class diagram showing the classes that realize the Print Outstanding Job Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.172.  A communication diagram of the realization of the extended scenario of Figure 11.101 of the Print Outstanding Job Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+The assistant chooses to print the outstanding job report (1).  The software product acquires the necessary service request data (2–5), and customer data (6–9), prints the report (9–10), and displays an acknowledgment (11–14).
+Figure 11.173.  The flow of events of the realization of the extended scenario of Figure 11.101 of the Print Outstanding Job Report use case of the Osric’s Office Appliances and Decor software product.
+
+
+Figure 11.174.  A sequence diagram equivalent to the communication diagram of Figure 11.172.  The flow of events therefore is shown in Figure 11.173.
+
+  	We now increment the class diagram.  In the course of realizing the various use cases, interrelationships between many of the classes became apparent; these interrelationships are reflected in the class diagrams of Figures 11.107, 11.111, 11.115, 11.119, 11.123, 11.127, 11.131, 11.135, 11.139, 11.143, 11.147, 11.151, 11.159, 11.163, 11.167, and 11.171.  Figure 11.175 combines these class diagrams.
+
+	Figure 11.106, the third iteration of the class diagram, is a subset of Figure 11.175.  Accordingly, Figure 11.175 is also the fourth iteration of the class diagram of the Osric’s Office Appliances and Decor product.
+
+	This concludes the analysis workflow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 11.175.  A class diagram combining the class diagrams of Figures 11.107, 11.111, 11.115, 11.119, 11.123, 11.127, 11.131, 11.135, 11.139, 11.143, 11.147, 11.151, 11.159, 11.163, 11.167, and 11.171.  As explained above, this figure is also the fourth iteration of the class diagram of the Osric’s Office Appliances and Decor product.
+11–2
+
+

@@ -1,0 +1,18 @@
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\bin\Release\Asg2-hxw161730.exe.config
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\bin\Release\Asg2-hxw161730.exe
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\bin\Release\Asg2-hxw161730.pdb
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2_hxw161730.Form1.resources
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2_hxw161730.Properties.Resources.resources
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.csproj.GenerateResource.Cache
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.exe
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.pdb
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.csprojResolveAssemblyReference.cache
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\bin\Release\Asg2-hxw161730.exe.config
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.exe
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.pdb
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\bin\Release\Asg2-hxw161730.exe
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\bin\Release\Asg2-hxw161730.pdb
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.csprojResolveAssemblyReference.cache
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2_hxw161730.Form1.resources
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2_hxw161730.Properties.Resources.resources
+C:\Users\WAN\Downloads\Asg2-hxw161730 (1)\Asg2-hxw161730\Asg2-hxw161730\obj\Release\Asg2-hxw161730.csproj.GenerateResource.Cache

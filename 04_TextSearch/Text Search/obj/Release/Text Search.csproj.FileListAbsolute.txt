@@ -1,0 +1,9 @@
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\bin\Release\Text Search.exe.config
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\bin\Release\Text Search.exe
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\bin\Release\Text Search.pdb
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\obj\Release\Text Search.csprojResolveAssemblyReference.cache
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\obj\Release\Text_Search.Form1.resources
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\obj\Release\Text_Search.Properties.Resources.resources
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\obj\Release\Text Search.csproj.GenerateResource.Cache
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\obj\Release\Text Search.exe
+C:\Users\WAN\Documents\Visual Studio 2015\Projects\Text Search\Text Search\obj\Release\Text Search.pdb

@@ -1,0 +1,9 @@
+<resources>
+    <!-- author: Hao WAN-->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="bodymargin">18dp</dimen>
+    <dimen name="nomargin">0dp</dimen>
+    <dimen name="title">16sp</dimen>
+    <dimen name="content">20sp</dimen>
+    <dimen name="big">24sp</dimen>
+</resources>

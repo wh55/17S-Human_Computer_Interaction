@@ -1,0 +1,16 @@
+<!-- author: Yanjiao JIA-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/save"
+          android:icon="@drawable/save"
+          android:title="@string/save"
+          app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/cancel"
+          android:title="@string/cancel"
+          android:icon="@drawable/cancel"
+          app:showAsAction="ifRoom" />
+
+
+    </menu>

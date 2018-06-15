@@ -1,0 +1,10 @@
+Aaaaaaaaaa1	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:30:31	01:31:25	2	
+Aaaaaaaaaa2	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:31:46	01:32:21	2	
+Aaaaaaaaaa3	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:32:29	01:33:11	5	
+Aaaaaaaaaa4	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:33:19	01:33:55	1	
+Aaaaaaaaaa5	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:34:03	01:34:31	0	
+Aaaaaaaaaa6	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:34:42	01:35:22	4	
+Aaaaaaaaaa7	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:35:40	01:36:12	4	
+Aaaaaaaaaa8	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:36:20	01:36:52	0	
+Aaaaaaaaaa9	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:36:58	01:37:27	0	
+Aaaaaaaaaa10	Bbbbbbbbbb	F	1234 Main St.	unk.	Dallas	TX	75001	1112223333	abc@utdallas.edu	YES	02/15/2017	01:37:35	01:38:07	0	

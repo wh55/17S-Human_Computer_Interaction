@@ -1,0 +1,21 @@
+<!-- author: Yanjiao JIA-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/edit"
+        android:icon="@drawable/edit"
+        android:title="@string/edit"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/delete"
+        android:title="@string/delete"
+        android:icon="@drawable/delete"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/cancel"
+        android:title="@string/cancel"
+        android:icon="@drawable/cancel"
+        app:showAsAction="ifRoom" />
+
+</menu>
