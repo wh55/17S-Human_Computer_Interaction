@@ -3,8 +3,8 @@ Instructor: **Mr. John Cole**
 
 This course focuses on the understanding of the **user experience design**.  
 
-## What's in the folders
-- folder `02_[AssignName]` to `05_[AssignName]` contain the source project folder for assignment 2-5
+## What's inside the folder
+- folder `02_[AssignName]` to `05_[AssignName]` contain the source code for assignment 2-5
 
 - folder `UsefulDocs` contains the requirements of the assignments and snapshots
 
